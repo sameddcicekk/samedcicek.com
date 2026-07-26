@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdussamed Çiçek | Software Developer</title>
+    <!-- Favicon hatası almamak için basit bir SVG favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Fira+Code:wght@400;500&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #000000; 
+            color: #ffffff; 
+            scroll-behavior: smooth;
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        .font-mono { font-family: 'Fira Code', monospace; }
+
+        .glass-card {
+            background: rgba(15, 15, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.1);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        .text-gradient {
+            background: linear-gradient(180deg, #FFFFFF 0%, #71717A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-accent { color: #64ffda; }
+        .bg-accent { background-color: #64ffda; }
+        .border-accent { border-color: #64ffda; }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#64ffda] selection:text-black relative">
+
+    <div class="fixed inset-0 bg-grid z-[-1] pointer-events-none"></div>
+
+    <nav class="fixed w-full z-50 top-0 bg-black/50 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl tracking-tighter">Samed.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition-colors duration-300">Hakkımda</a>
+                <a href="#skills" class="hover:text-white transition-colors duration-300">Yetenekler</a>
+                <a href="#projects" class="hover:text-white transition-colors duration-300">Projeler</a>
+                <a href="#certificates" class="hover:text-white transition-colors duration-300">Sertifikalar</a>
+                <a href="#contact" class="hover:text-white transition-colors duration-300">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center px-6 pt-20 pb-12 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto w-full z-10 fade-in">
+            <div class="max-w-3xl border-l-4 border-white/20 pl-6 md:pl-10 py-4 hover:border-white/60 transition-colors duration-500">
+                
+                <div class="flex items-center gap-3 mb-6 font-mono text-sm text-gray-400">
+                    <i class="fas fa-terminal"></i>
+                    <span>~/developer/profile</span>
+                    <span class="px-2 py-0.5 bg-white/10 text-white rounded text-xs ml-2">v1.0</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-white leading-none">
+                    Abdussamed<br />Çiçek<span class="text-gray-600">.</span>
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl font-mono text-gray-300 mb-8 flex items-center gap-3">
+                    <span class="text-white">></span> Yönetim Bilişim Sistemleri Mezunu & JR. Yazılım Geliştirici
+                </h2>
+                
+                <p class="text-lg text-gray-400 max-w-2xl mb-10 leading-relaxed font-light">
+                    Sistemleri bütüncül bir bakış açısıyla analiz edip, karmaşık problemleri temiz ve ölçeklenebilir kodlarla çözüyorum. Fikirleri koda, kodu gerçekliğe dönüştüren bir teknoloji tutkunuyum.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-start gap-4 mb-16">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-colors text-center text-sm">
+                        Projelerimi Gör
+                    </a>
+                    <a href="samed_cicek_cv.pdf" download class="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font-medium rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
+                        <i class="fas fa-file-pdf text-gray-400"></i> CV İndir
+                    </a>
+                    <a href="https://github.com/sameddcicekk" target="_blank" class="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font-medium rounded hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                
+                <div class="flex flex-wrap gap-8 font-mono text-sm text-gray-400">
+                    <a href="mailto:iletisim@samedcicek.com" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="far fa-envelope text-lg"></i> Mail
+                    </a>
+                    <a href="https://linkedin.com/in/abdussamedcicek" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fab fa-linkedin text-lg"></i> LinkedIn
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="fade-in delay-100">
+                <h2 class="text-3xl font-bold mb-6">Sistem Analizi & Yazılım Geliştirme</h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Atatürk Üniversitesi Yönetim Bilişim Sistemleri bölümünden mezun oldum. Eğitim hayatım boyunca işin sadece teorisinde kalmayıp fikirleri doğrudan koda dökmeyi seçtim. Front-end'in görselliğinden back-end'in mantığına ve yapay zeka entegrasyonlarına kadar sistemin her parçasıyla uğraşmayı seviyorum. Ekip çalışmasının gücüne inanıyor, karmaşık sorunlara basit ve temiz çözümler üretiyorum.
+                </p>
+            </div>
+            
+            <div class="glass-card p-6 font-mono text-sm fade-in delay-200 overflow-x-auto">
+                <div class="flex gap-2 mb-4 border-b border-white/10 pb-4">
+                    <div class="w-3 h-3 rounded-full bg-gray-600"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                </div>
+                <div class="text-gray-400">
+                    <span class="text-white">const</span> <span class="text-gray-300">developer</span> = {<br>
+                    &nbsp;&nbsp;name: <span class="text-gray-100">'Abdussamed Çiçek'</span>,<br>
+                    &nbsp;&nbsp;role: <span class="text-gray-100">'Jr. Software Developer'</span>,<br>
+                    &nbsp;&nbsp;location: <span class="text-gray-100">'Türkiye'</span>,<br>
+                    &nbsp;&nbsp;education: <span class="text-gray-100">'Atatürk Üni. YBS (Mezun)'</span>,<br>
+                    &nbsp;&nbsp;focus: [<span class="text-gray-100">'Web'</span>, <span class="text-gray-100">'Mobile'</span>, <span class="text-gray-100">'AI Integration'</span>],<br>
+                    &nbsp;&nbsp;execute: <span class="text-white">function</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white">return</span> <span class="text-gray-100">'Clean & Scalable Code'</span>;<br>
+                    &nbsp;&nbsp;}<br>
+                    };
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 border-t border-white/10 bg-white/[0.02]">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 fade-in text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Kullandığım araçlar ve çözüm ürettiğim alanlar.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 fade-in delay-100">
+                    <h3 class="font-mono text-sm text-gray-400 mb-6 tracking-widest">[ FRONTEND & MOBILE ]</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Next.js</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">React</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Flutter</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">HTML/CSS</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 fade-in delay-200">
+                    <h3 class="font-mono text-sm text-gray-400 mb-6 tracking-widest">[ BACKEND & CORE ]</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Python</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">C#</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">JavaScript</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Dart</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 fade-in delay-300">
+                    <h3 class="font-mono text-sm text-gray-400 mb-6 tracking-widest">[ DATA & CLOUD ]</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">PyTorch</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Firebase</span>
+                        <span class="px-4 py-2 border border-white/20 rounded-full text-sm hover:bg-white hover:text-black transition-colors cursor-default">Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 fade-in text-center md:text-left">Öne Çıkan Çalışmalar</h2>
+            
+            <div class="space-y-12">
+                <div class="glass-card p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center fade-in delay-100 group">
+                    <div class="w-full md:w-1/3 flex flex-col justify-center items-center p-8 bg-black/40 rounded-xl border border-white/5 group-hover:border-white/20 transition-colors">
+                        <i class="fas fa-city text-5xl text-gray-600 group-hover:text-white transition-colors duration-500 mb-4"></i>
+                        <span class="font-mono text-xs text-gray-500">TÜBİTAK 2209-A</span>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-3">AI Destekli Akıllı Şehir Uygulaması</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Kullanıcıların zaman, konum ve ilgi alanlarına göre yapay zeka destekli akıllı turizm rotaları oluşturan inovatif mobil uygulama. Projeye, özelleştirilmiş rota planlaması yapan LLM (Büyük Dil Modeli) karar algoritmaları başarıyla entegre edildi.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="px-3 py-1 bg-white/10 rounded">Flutter</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Firebase</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Python</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 flex flex-col md:flex-row-reverse gap-8 items-center fade-in delay-200 group">
+                    <div class="w-full md:w-1/3 flex flex-col justify-center items-center p-8 bg-black/40 rounded-xl border border-white/5 group-hover:border-white/20 transition-colors">
+                        <i class="fas fa-utensils text-5xl text-gray-600 group-hover:text-white transition-colors duration-500 mb-4"></i>
+                        <span class="font-mono text-xs text-gray-500">Web App</span>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-3">PrepMaster</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Gıda israfını önlemek amacıyla mutfak envanter takibi ve yapay zeka destekli tarif önerisi sunan modern web platformu. Sıfırdan kurgulanan mimari Vercel üzerinden canlıya alındı ve aktif olarak kullanılıyor.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="px-3 py-1 bg-white/10 rounded">Next.js</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Firebase</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Groq API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center fade-in delay-300 group">
+                    <div class="w-full md:w-1/3 flex flex-col justify-center items-center p-8 bg-black/40 rounded-xl border border-white/5 group-hover:border-white/20 transition-colors">
+                        <i class="fas fa-chart-line text-5xl text-gray-600 group-hover:text-white transition-colors duration-500 mb-4"></i>
+                        <span class="font-mono text-xs text-gray-500">Deep Learning</span>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-3">Stock Price Prediction</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            PyTorch ve derin öğrenme (deep learning) mimarileriyle finansal verilere dayalı hisse senedi fiyat tahminleme modeli. Zaman serisi verileri üzerinde yoğun veri ön işleme, model eğitimi ve performans analizi süreçleri yürütülmektedir.
+                        </p>
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="px-3 py-1 bg-white/10 rounded">PyTorch</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Python</span>
+                            <span class="px-3 py-1 bg-white/10 rounded">Pandas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 fade-in text-center md:text-left">Eğitim & Sertifikalar</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- HP AI -->
+                <div class="glass-card p-8 fade-in delay-100 flex flex-col h-full hover:border-white/30 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-xs font-mono text-gray-400 border border-white/10 px-3 py-1.5 rounded-full bg-white/5">Tamamlandı</span>
+                        <i class="fas fa-certificate text-gray-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">HP Generative AI Mastery</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">edX üzerinden başarıyla tamamlanan, oyun geliştirme ve üretken yapay zeka entegrasyonu odaklı global sertifikasyon programı.</p>
+                </div>
+
+                <!-- Otomotiv Yaz Kampı -->
+                <div class="glass-card p-8 fade-in delay-200 flex flex-col h-full hover:border-white/30 transition-colors">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="text-xs font-mono text-gray-400 border border-white/10 px-3 py-1.5 rounded-full bg-white/5">Tamamlandı</span>
+                        <i class="fas fa-car-side text-gray-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Otomotiv Yaz Kampı</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Otomotiv endüstrisindeki teknolojik dinamikleri ve akıllı sistem entegrasyonlarını inceleme fırsatı bulduğum kamp programı.</p>
+                </div>
+
+                <!-- Innova -->
+                <div class="glass-card p-8 fade-in delay-300 flex flex-col h-full border-accent/20 hover:border-accent/50 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-xs font-mono text-accent border border-accent/30 px-3 py-1.5 rounded-full bg-accent/5 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> Devam Ediyor
+                        </span>
+                        <i class="fas fa-laptop-code text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white relative z-10">İnnova Career-Inn</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 relative z-10">Türkiye'nin öncü teknoloji şirketlerinden İnnova bünyesinde yürütülen aktif profesyonel gelişim programı.</p>
+                </div>
+
+                <!-- GameUp -->
+                <div class="glass-card p-8 fade-in delay-100 flex flex-col h-full border-accent/20 hover:border-accent/50 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-xs font-mono text-accent border border-accent/30 px-3 py-1.5 rounded-full bg-accent/5 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> Devam Ediyor
+                        </span>
+                        <i class="fas fa-gamepad text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white relative z-10">GameUp Türkiye</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 relative z-10">HP Generative AI eğitiminin devamı niteliğindeki, oyun geliştirme süreçlerine ve pratik uygulamalara odaklanan program.</p>
+                </div>
+
+                <!-- Microsoft Learn -->
+                <div class="glass-card p-8 fade-in delay-200 flex flex-col h-full border-accent/20 hover:border-accent/50 transition-colors relative overflow-hidden md:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent/5 rounded-bl-full"></div>
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <span class="text-xs font-mono text-accent border border-accent/30 px-3 py-1.5 rounded-full bg-accent/5 flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span> Devam Ediyor
+                        </span>
+                        <i class="fab fa-microsoft text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white relative z-10">Microsoft Learn: Stock Price Prediction</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4 relative z-10">Geçmiş MSFT hisse verilerini (Kaggle/Yahoo) kullanarak Doğrusal Regresyon, Hareketli Ortalamalar ve LSTM (Derin Öğrenme) modelleriyle geleceğe yönelik fiyat tahminlemesi ve MSE performans analizi yapılan, bitiminde sertifikalandırılacak veri bilimi programı.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h2 class="text-4xl md:text-5xl font-black mb-8">Bağlantıya Geç</h2>
+            <p class="text-gray-400 mb-12 text-lg">
+                Fikir alışverişinde bulunmak, projeler üzerine konuşmak veya profesyonel iş fırsatları için benimle iletişime geçebilirsiniz.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:sameddcicekk@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-paper-plane"></i> iletisim@samedcicek.com
+                </a>
+                <a href="samed_cicek_cv.pdf
+                     class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/20 text-white font-medium rounded hover:bg-white/10 transition-colors duration-300">
+                    <i class="fas fa-file-download text-gray-400"></i> PDF Özgeçmiş
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/10 text-center px-6">
+        <p class="text-gray-600 text-sm mb-2">
+            © 2026 Abdussamed Çiçek.
+        </p>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((element) => {
+            element.style.animationPlayState = 'paused';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
