@@ -2,7 +2,7 @@
 
 Bu depo, kişisel portfolyo web sitemin kaynak kodlarını içermektedir. Sistem analizi, yazılım geliştirme ve güncel teknolojilerle ürettiğim projeleri sergilediğim bu site, modern web standartlarına uygun olarak tasarlanmıştır.
 
-🔗 **Canlı Site:** [[(https://www.samedcicek.com/)]
+🔗 **Canlı Site:** [(https://www.samedcicek.com/)]
 
 ## 🛠️ Kullanılan Teknolojiler
 * **Frontend:** HTML5, Tailwind CSS
